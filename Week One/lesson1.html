@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to HTML</title>
+  <link rel="stylesheet" href="lessons.css">
+  <style>
+    /* Inline CSS for the editor */
+    .editor-container {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+    }
+
+    .editor {
+      width: 100%;
+      height: 200px;
+      margin-bottom: 10px;
+    }
+
+    .preview {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      height: 200px;
+      overflow: auto;
+      background-color: #fff;
+    }
+
+    .editor-controls {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .editor-controls button {
+      background-color: #0758ad;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .editor-controls button:hover {
+      background-color: #6d9cce;
+    }
+
+    .video-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="lesson-container">
+    <a href="./week1.html" class="back-button">← Back to Week 1</a>
+    <h1 class="lesson-title">Lesson 1: Introduction to HTML</h1>
+
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+    </div>
+
+    <div class="lesson-content">
+      <h2>What is HTML?</h2>
+      <p>HTML (HyperText Markup Language) is the standard language for creating web pages and web applications. It structures the content on the web and defines elements such as headings, paragraphs, links, and images.</p>
+      
+      <h2>Basic HTML Structure</h2>
+      <p>Every HTML document has a basic structure that includes the following elements:</p>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Document Title&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+      <h2>Common HTML Tags</h2>
+      <ul>
+        <li>&lt;h1&gt; to &lt;h6&gt;: Headings</li>
+        <li>&lt;p&gt;: Paragraphs</li>
+        <li>&lt;a&gt;: Links</li>
+        <li>&lt;img&gt;: Images</li>
+        <li>&lt;ul&gt; and &lt;ol&gt;: Lists</li>
+      </ul>
+
+      <h2>Example: Creating a Simple HTML Page</h2>
+      <p>To create a simple HTML page, you can use the following code:</p>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My First Web Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Welcome to My First Web Page&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph on my first web page.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+      <h2>Practice</h2>
+      <p>Create your own HTML page based on the example provided. Experiment with different tags and content.</p>
+
+      <div class="editor-container">
+        <textarea id="html-code" class="editor" placeholder="Type your HTML code here..."></textarea>
+        <textarea id="css-code" class="editor" placeholder="Type your CSS code here..."></textarea>
+        <textarea id="js-code" class="editor" placeholder="Type your JavaScript code here..."></textarea>
+        <div class="editor-controls">
+          <button onclick="runCode()">Run Code</button>
+        </div>
+        <iframe id="preview" class="preview"></iframe>
+      </div>
+    </div>
+  </div>
+  <script>
+    function runCode() {
+      const htmlCode = document.getElementById('html-code').value;
+      const cssCode = document.getElementById('css-code').value;
+      const jsCode = document.getElementById('js-code').value;
+      const previewFrame = document.getElementById('preview');
+
+      previewFrame.contentDocument.open();
+      previewFrame.contentDocument.write(`
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <style>${cssCode}</style>
+          </head>
+          <body>
+            ${htmlCode}
+            <script>${jsCode}<\/script>
+          </body>
+        </html>
+      `);
+      previewFrame.contentDocument.close();
+    }
+  </script>
+</body>
+</html>

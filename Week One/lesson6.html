@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 6: Links in HTML</title>
+  <link rel="stylesheet" href="lessons.css">
+  <style>
+    /* Inline CSS for the editor */
+    .editor-container {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+    }
+
+    .editor {
+      width: 100%;
+      height: 200px;
+      margin-bottom: 10px;
+    }
+
+    .preview {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      height: 200px;
+      overflow: auto;
+      background-color: #fff;
+    }
+
+    .editor-controls {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .editor-controls button {
+      background-color: #0758ad;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .editor-controls button:hover {
+      background-color: #6d9cce;
+    }
+
+    .video-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      border: none;
+    }
+
+    .quiz-container {
+      margin-top: 30px;
+    }
+
+    .quiz-question {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .quiz-option {
+      margin-bottom: 5px;
+    }
+
+    .quiz-option input {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="lesson-container">
+    <a href="./week1.html" class="back-button">← Back to Week 1</a>
+    <h1 class="lesson-title">Lesson 6: Links in HTML</h1>
+
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+    </div>
+
+    <div class="lesson-content">
+      <h2>Introduction to Links</h2>
+      <p>Links are essential in HTML for navigating between pages and websites. In this lesson, you'll learn how to create and style links effectively.</p>
+      
+      <h2>Basic Link Syntax</h2>
+      <p>The <code>&lt;a&gt;</code> (anchor) tag is used to create a hyperlink in HTML. The <code>href</code> attribute specifies the URL of the page the link goes to.</p>
+      <pre><code>&lt;a href="https://www.example.com"&gt;Visit Example&lt;/a&gt;</code></pre>
+
+      <h2>Opening Links in a New Tab</h2>
+      <p>To open a link in a new tab, use the <code>target="_blank"</code> attribute.</p>
+      <pre><code>&lt;a href="https://www.example.com" target="_blank"&gt;Visit Example&lt;/a&gt;</code></pre>
+
+      <h2>Email Links</h2>
+      <p>To create a link that opens the user's email client, use the <code>mailto:</code> protocol.</p>
+      <pre><code>&lt;a href="mailto:someone@example.com"&gt;Send Email&lt;/a&gt;</code></pre>
+
+      <h2>Linking to Sections Within a Page</h2>
+      <p>To link to a specific section within the same page, use an ID selector with the <code>#</code> symbol.</p>
+      <pre><code>&lt;a href="#section1"&gt;Go to Section 1&lt;/a&gt;</code></pre>
+
+      <h2>Practical Exercise: Create Links</h2>
+      <p>Use the code editor below to practice creating different types of links. Experiment with internal, external, and email links.</p>
+
+      <div class="editor-container">
+        <textarea id="html-code" class="editor" placeholder="Type your HTML code here..."></textarea>
+        <textarea id="css-code" class="editor" placeholder="Type your CSS code here..."></textarea>
+        <textarea id="js-code" class="editor" placeholder="Type your JavaScript code here..."></textarea>
+        <div class="editor-controls">
+          <button onclick="runCode()">Run Code</button>
+        </div>
+        <iframe id="preview" class="preview"></iframe>
+      </div>
+
+      <!-- <h2>Quiz: Test Your Knowledge</h2>
+      <div class="quiz-container">
+        <div class="quiz-question">
+          1. Which HTML tag is used to create a hyperlink?
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz1-option1" name="quiz1">
+          <label for="quiz1-option1">a) &lt;a&gt;</label>
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz1-option2" name="quiz1">
+          <label for="quiz1-option2">b) &lt;link&gt;</label>
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz1-option3" name="quiz1">
+          <label for="quiz1-option3">c) &lt;href&gt;</label>
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz1-option4" name="quiz1">
+          <label for="quiz1-option4">d) &lt;nav&gt;</label>
+        </div>
+      </div> -->
+    </div>
+  </div>
+  <script>
+    function runCode() {
+      const htmlCode = document.getElementById('html-code').value;
+      const cssCode = document.getElementById('css-code').value;
+      const jsCode = document.getElementById('js-code').value;
+      const previewFrame = document.getElementById('preview');
+
+      previewFrame.contentDocument.open();
+      previewFrame.contentDocument.write(`
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <style>${cssCode}</style>
+          </head>
+          <body>
+            ${htmlCode}
+            <script>${jsCode}<\/script>
+          </body>
+        </html>
+      `);
+      previewFrame.contentDocument.close();
+    }
+  </script>
+</body>
+</html>

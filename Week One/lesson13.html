@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 13: CSS Display and Positioning</title>
+  <link rel="stylesheet" href="lessons.css">
+  <style>
+    /* Inline CSS for the editor */
+    .editor-container {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+    }
+
+    .editor {
+      width: 100%;
+      height: 200px;
+      margin-bottom: 10px;
+    }
+
+    .preview {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      height: 200px;
+      overflow: auto;
+      background-color: #fff;
+    }
+
+    .editor-controls {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .editor-controls button {
+      background-color: #0758ad;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .editor-controls button:hover {
+      background-color: #6d9cce;
+    }
+
+    .video-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      border: none;
+    }
+
+    .quiz-container {
+      margin-top: 30px;
+    }
+
+    .quiz-question {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .quiz-option {
+      margin-bottom: 5px;
+    }
+
+    .quiz-option input {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="lesson-container">
+    <a href="./week1.html" class="back-button">← Back to Week 1</a>
+    <h1 class="lesson-title">Lesson 13: CSS Display and Positioning</h1>
+
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+    </div>
+
+    <div class="lesson-content">
+      <h2>Understanding CSS Display Property</h2>
+      <p>The <code>display</code> property in CSS determines how an element is displayed on the web page. The most common values for the <code>display</code> property are:</p>
+      <ul>
+        <li><strong><code>block</code></strong>: The element takes up the full width available, with a new line before and after it.</li>
+        <li><strong><code>inline</code></strong>: The element takes up only as much width as necessary, without starting a new line.</li>
+        <li><strong><code>inline-block</code></strong>: The element is like <code>inline</code>, but you can set width and height.</li>
+        <li><strong><code>none</code></strong>: The element is completely removed from the document flow.</li>
+      </ul>
+      <pre><code>/* Example of using display property */
+div {
+  display: block;
+}
+
+span {
+  display: inline;
+}</code></pre>
+
+      <h2>CSS Positioning</h2>
+      <p>CSS positioning allows you to control the placement of elements on your webpage. The main positioning types are:</p>
+      <ul>
+        <li><strong><code>static</code></strong>: This is the default position; elements are placed according to the normal document flow.</li>
+        <li><strong><code>relative</code></strong>: The element is positioned relative to its normal position, using <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> properties.</li>
+        <li><strong><code>absolute</code></strong>: The element is positioned relative to its closest positioned ancestor (not static). If none, it uses the document body.</li>
+        <li><strong><code>fixed</code></strong>: The element is positioned relative to the browser window, staying in the same position even when scrolling.</li>
+        <li><strong><code>sticky</code></strong>: The element toggles between relative and fixed positioning depending on the scroll position.</li>
+      </ul>
+      <pre><code>/* Example of using positioning */
+.relative-box {
+  position: relative;
+  top: 10px;
+}
+
+.absolute-box {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+}
+
+.fixed-box {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}</code></pre>
+
+      <h2>Practical Exercise: Display and Positioning</h2>
+      <p>Use the code editor below to practice using the <code>display</code> property and positioning elements on the page. Experiment with different display values and positioning techniques.</p>
+
+      <div class="editor-container">
+        <textarea id="html-code" class="editor" placeholder="Type your HTML code here..."></textarea>
+        <textarea id="css-code" class="editor" placeholder="Type your CSS code here..."></textarea>
+        <div class="editor-controls">
+          <button onclick="runCode()">Run Code</button>
+        </div>
+        <iframe id="preview" class="preview"></iframe>
+      </div>
+
+      <!-- <h2>Quiz: Test Your Knowledge</h2>
+      <div class="quiz-container">
+        <div class="quiz-question">
+          1. Which <code>display</code> value would you use to remove an element from the document flow but keep it in the DOM?
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz13-option1" name="quiz13">
+          <label for="quiz13-option1">a) inline</label>
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz13-option2" name="quiz13">
+          <label for="quiz13-option2">b) none</label>
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz13-option3" name="quiz13">
+          <label for="quiz13-option3">c) block</label>
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz13-option4" name="quiz13">
+          <label for="quiz13-option4">d) inline-block</label>
+        </div>
+
+        <div class="quiz-question">
+          2. What does <code>position: absolute</code> do to an element?
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz13-option5" name="quiz13">
+          <label for="quiz13-option5">a) Positions it relative to the nearest positioned ancestor</label>
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz13-option6" name="quiz13">
+          <label for="quiz13-option6">b) Positions it relative to the viewport</label>
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz13-option7" name="quiz13">
+          <label for="quiz13-option7">c) Positions it relative to its normal position</label>
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz13-option8" name="quiz13">
+          <label for="quiz13-option8">d) Positions it relative to the document body</label>
+        </div>
+
+      </div> -->
+    </div>
+  </div>
+  <script>
+    function runCode() {
+      const htmlCode = document.getElementById('html-code').value;
+      const cssCode = document.getElementById('css-code').value;
+      const previewFrame = document.getElementById('preview');
+
+      previewFrame.contentDocument.open();
+      previewFrame.contentDocument.write(`
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <style>${cssCode}</style>
+          </head>
+          <body>
+            ${htmlCode}
+          </body>
+        </html>
+      `);
+      previewFrame.contentDocument.close();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 3: HTML Attributes</title>
+  <link rel="stylesheet" href="lessons.css">
+  <style>
+    /* Inline CSS for the editor */
+    .editor-container {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+    }
+
+    .editor {
+      width: 100%;
+      height: 200px;
+      margin-bottom: 10px;
+    }
+
+    .preview {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      height: 200px;
+      overflow: auto;
+      background-color: #fff;
+    }
+
+    .editor-controls {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .editor-controls button {
+      background-color: #0758ad;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .editor-controls button:hover {
+      background-color: #6d9cce;
+    }
+
+    .video-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      border: none;
+    }
+
+    .quiz-container {
+      margin-top: 30px;
+    }
+
+    .quiz-question {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .quiz-option {
+      margin-bottom: 5px;
+    }
+
+    .quiz-option input {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="lesson-container">
+    <a href="./week1.html" class="back-button">← Back to Week 1</a>
+    <h1 class="lesson-title">Lesson 3: HTML Attributes</h1>
+
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+    </div>
+
+    <div class="lesson-content">
+      <h2>What are HTML Attributes?</h2>
+      <p>HTML attributes provide additional information about elements. They are always specified in the opening tag and usually come in name/value pairs like <code>name="value"</code>.</p>
+      
+      <h2>Common HTML Attributes</h2>
+      <ul>
+        <li><code>href</code>: Specifies the URL of a link.</li>
+        <li><code>src</code>: Specifies the source of an image or script.</li>
+        <li><code>alt</code>: Provides alternative text for an image.</li>
+        <li><code>title</code>: Adds a tooltip text when the mouse hovers over the element.</li>
+        <li><code>style</code>: Applies inline CSS styles.</li>
+      </ul>
+
+      <h2>Example: Using Attributes in HTML</h2>
+      <p>Here’s an example of how to use these attributes:</p>
+      <pre><code>&lt;a href="https://example.com" title="Visit Example"&gt;Example Link&lt;/a&gt;</code></pre>
+      <pre><code>&lt;img src="image.jpg" alt="A descriptive image"&gt;</code></pre>
+
+      <h2>Practical Exercise: Add Attributes to HTML Elements</h2>
+      <p>In the code editor below, try adding the following attributes to the appropriate HTML elements:</p>
+      <ul>
+        <li>Add an <code>href</code> attribute to an anchor tag that links to your favorite website.</li>
+        <li>Add a <code>src</code> attribute to an image tag that displays an image of your choice.</li>
+        <li>Add an <code>alt</code> attribute to the image tag with a descriptive text.</li>
+        <li>Add a <code>title</code> attribute to the anchor tag that describes where the link goes.</li>
+      </ul>
+
+      <div class="editor-container">
+        <textarea id="html-code" class="editor" placeholder="Type your HTML code here..."></textarea>
+        <textarea id="css-code" class="editor" placeholder="Type your CSS code here..."></textarea>
+        <textarea id="js-code" class="editor" placeholder="Type your JavaScript code here..."></textarea>
+        <div class="editor-controls">
+          <button onclick="runCode()">Run Code</button>
+        </div>
+        <iframe id="preview" class="preview"></iframe>
+      </div>
+
+      <!-- <h2>Quiz: Test Your Knowledge</h2> -->
+      <!-- <div class="quiz-container">
+        <div class="quiz-question">
+          1. Which attribute would you use to specify the URL of an image?
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz1-option1" name="quiz1">
+          <label for="quiz1-option1">a) href</label>
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz1-option2" name="quiz1">
+          <label for="quiz1-option2">b) src</label>
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz1-option3" name="quiz1">
+          <label for="quiz1-option3">c) alt</label>
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz1-option4" name="quiz1">
+          <label for="quiz1-option4">d) title</label>
+        </div>
+      </div> -->
+    </div>
+  </div>
+  <script>
+    function runCode() {
+      const htmlCode = document.getElementById('html-code').value;
+      const cssCode = document.getElementById('css-code').value;
+      const jsCode = document.getElementById('js-code').value;
+      const previewFrame = document.getElementById('preview');
+
+      previewFrame.contentDocument.open();
+      previewFrame.contentDocument.write(`
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <style>${cssCode}</style>
+          </head>
+          <body>
+            ${htmlCode}
+            <script>${jsCode}<\/script>
+          </body>
+        </html>
+      `);
+      previewFrame.contentDocument.close();
+    }
+  </script>
+</body>
+</html>

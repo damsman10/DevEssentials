@@ -1,0 +1,60 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.course-container {
+    background-color: #ffffff;
+    width: 80%;
+    max-width: 900px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.course-title {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.week {
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.week h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.week p {
+    margin: 0;
+    font-size: 16px;
+    opacity: 0.85;
+}
+
+.week:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.week:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}

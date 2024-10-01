@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 9: CSS Properties for Text Formatting</title>
+  <link rel="stylesheet" href="lessons.css">
+  <style>
+    /* Inline CSS for the editor */
+    .editor-container {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+    }
+
+    .editor {
+      width: 100%;
+      height: 200px;
+      margin-bottom: 10px;
+    }
+
+    .preview {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      height: 200px;
+      overflow: auto;
+      background-color: #fff;
+    }
+
+    .editor-controls {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .editor-controls button {
+      background-color: #0758ad;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .editor-controls button:hover {
+      background-color: #6d9cce;
+    }
+
+    .video-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      border: none;
+    }
+
+    .quiz-container {
+      margin-top: 30px;
+    }
+
+    .quiz-question {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .quiz-option {
+      margin-bottom: 5px;
+    }
+
+    .quiz-option input {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="lesson-container">
+    <a href="./week1.html" class="back-button">← Back to Week 1</a>
+    <h1 class="lesson-title">Lesson 9: CSS Properties for Text Formatting</h1>
+
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+    </div>
+
+    <div class="lesson-content">
+      <h2>CSS Text Formatting Properties</h2>
+      <p>In this lesson, we will learn about various CSS properties that are used to format text. These properties help you control the appearance of text on a web page. Here are some key properties:</p>
+      
+      <h3>1. <code>font-family</code></h3>
+      <p>This property specifies the font of the text. You can use system fonts or web fonts.</p>
+      <pre><code>p {
+  font-family: Arial, sans-serif;
+}</code></pre>
+
+      <h3>2. <code>font-size</code></h3>
+      <p>Sets the size of the font. You can use units such as pixels (px), ems, or percentages.</p>
+      <pre><code>p {
+  font-size: 16px;
+}</code></pre>
+
+      <h3>3. <code>font-weight</code></h3>
+      <p>Defines the thickness of the font. Values can be normal, bold, bolder, or numbers from 100 to 900.</p>
+      <pre><code>p {
+  font-weight: bold;
+}</code></pre>
+
+      <h3>4. <code>text-align</code></h3>
+      <p>Aligns the text horizontally within its container. Values can be left, right, center, or justify.</p>
+      <pre><code>p {
+  text-align: center;
+}</code></pre>
+
+      <h3>5. <code>line-height</code></h3>
+      <p>Sets the distance between lines of text. It can be a number, length, or percentage.</p>
+      <pre><code>p {
+  line-height: 1.5;
+}</code></pre>
+
+      <h3>6. <code>text-transform</code></h3>
+      <p>Controls the capitalization of text. Options include uppercase, lowercase, and capitalize.</p>
+      <pre><code>p {
+  text-transform: uppercase;
+}</code></pre>
+
+      <h3>7. <code>letter-spacing</code></h3>
+      <p>Adjusts the space between letters.</p>
+      <pre><code>p {
+  letter-spacing: 2px;
+}</code></pre>
+
+      <h2>Practical Exercise: Formatting Text</h2>
+      <p>Use the code editor below to practice applying CSS text formatting properties to a simple HTML structure. Experiment with different properties to see how they affect the text.</p>
+
+      <div class="editor-container">
+        <textarea id="html-code" class="editor" placeholder="Type your HTML code here..."></textarea>
+        <textarea id="css-code" class="editor" placeholder="Type your CSS code here..."></textarea>
+        <div class="editor-controls">
+          <button onclick="runCode()">Run Code</button>
+        </div>
+        <iframe id="preview" class="preview"></iframe>
+      </div>
+
+      <!-- <h2>Quiz: Test Your Knowledge</h2>
+      <div class="quiz-container">
+        <div class="quiz-question">
+          1. What CSS property is used to set the font size of text?
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz9-option1" name="quiz9">
+          <label for="quiz9-option1">a) font-family</label>
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz9-option2" name="quiz9">
+          <label for="quiz9-option2">b) font-size</label>
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz9-option3" name="quiz9">
+          <label for="quiz9-option3">c) text-align</label>
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz9-option4" name="quiz9">
+          <label for="quiz9-option4">d) line-height</label>
+        </div>
+
+        <div class="quiz-question">
+          2. Which property controls the capitalization of text?
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz9-option5" name="quiz9">
+          <label for="quiz9-option5">a) text-transform</label>
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz9-option6" name="quiz9">
+          <label for="quiz9-option6">b) letter-spacing</label>
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz9-option7" name="quiz9">
+          <label for="quiz9-option7">c) font-weight</label>
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz9-option8" name="quiz9">
+          <label for="quiz9-option8">d) font-size</label>
+        </div>
+
+         Add more questions as needed 
+      </div> -->
+    </div>
+  </div>
+  <script>
+    function runCode() {
+      const htmlCode = document.getElementById('html-code').value;
+      const cssCode = document.getElementById('css-code').value;
+      const previewFrame = document.getElementById('preview');
+
+      previewFrame.contentDocument.open();
+      previewFrame.contentDocument.write(`
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <style>${cssCode}</style>
+          </head>
+          <body>
+            ${htmlCode}
+          </body>
+        </html>
+      `);
+      previewFrame.contentDocument.close();
+    }
+  </script>
+</body>
+</html>

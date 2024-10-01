@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 12: Complex CSS Selectors</title>
+  <link rel="stylesheet" href="lessons.css">
+  <style>
+    /* Inline CSS for the editor */
+    .editor-container {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+    }
+
+    .editor {
+      width: 100%;
+      height: 200px;
+      margin-bottom: 10px;
+    }
+
+    .preview {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      height: 200px;
+      overflow: auto;
+      background-color: #fff;
+    }
+
+    .editor-controls {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .editor-controls button {
+      background-color: #0758ad;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .editor-controls button:hover {
+      background-color: #6d9cce;
+    }
+
+    .video-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      border: none;
+    }
+
+    .quiz-container {
+      margin-top: 30px;
+    }
+
+    .quiz-question {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .quiz-option {
+      margin-bottom: 5px;
+    }
+
+    .quiz-option input {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="lesson-container">
+    <a href="./week1.html" class="back-button">← Back to Week 1</a>
+    <h1 class="lesson-title">Lesson 12: Complex CSS Selectors (Pseudo-classes and Pseudo-elements)</h1>
+
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+    </div>
+
+    <div class="lesson-content">
+      <h2>Complex CSS Selectors: Pseudo-classes and Pseudo-elements</h2>
+      <p>In this lesson, we’ll explore more advanced CSS selectors: pseudo-classes and pseudo-elements. These selectors allow you to style elements based on their state or to style specific parts of an element.</p>
+
+      <h3>1. Pseudo-classes</h3>
+      <p>Pseudo-classes target elements based on their state or their position within the DOM. They are written with a colon (<code>:</code>) before the class name.</p>
+      <ul>
+        <li><strong><code>:hover</code>:</strong> Targets an element when the user hovers over it with a cursor.</li>
+        <li><strong><code>:focus</code>:</strong> Targets an element when it is focused, such as when a user clicks on an input field.</li>
+        <li><strong><code>:nth-child()</code>:</strong> Targets an element based on its position among its siblings. For example, <code>:nth-child(2)</code> targets the second child.</li>
+        <li><strong><code>:not()</code>:</strong> Excludes elements that match a specific selector. For example, <code>:not(.highlight)</code> targets all elements except those with the class "highlight".</li>
+      </ul>
+      <pre><code>/* Example of using pseudo-classes */
+button:hover {
+  background-color: #6d9cce;
+}
+
+input:focus {
+  border-color: #0758ad;
+}
+
+li:nth-child(odd) {
+  background-color: #f4f4f4;
+}</code></pre>
+
+      <h3>2. Pseudo-elements</h3>
+      <p>Pseudo-elements allow you to style specific parts of an element, such as the first letter or the first line of a paragraph. They are written with two colons (<code>::</code>) before the element name.</p>
+      <ul>
+        <li><strong><code>::before</code>:</strong> Inserts content before the element’s actual content.</li>
+        <li><strong><code>::after</code>:</strong> Inserts content after the element’s actual content.</li>
+        <li><strong><code>::first-letter</code>:</strong> Styles the first letter of an element.</li>
+        <li><strong><code>::first-line</code>:</strong> Styles the first line of an element.</li>
+      </ul>
+      <pre><code>/* Example of using pseudo-elements */
+p::first-letter {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+p::before {
+  content: "Note: ";
+  color: red;
+  font-weight: bold;
+}</code></pre>
+
+      <h3>3. Combining Pseudo-classes and Pseudo-elements</h3>
+      <p>You can combine pseudo-classes and pseudo-elements for more powerful selectors:</p>
+      <pre><code>/* Example of combining pseudo-classes and pseudo-elements */
+a:hover::after {
+  content: " →";
+  color: #0758ad;
+}</code></pre>
+
+      <h2>Practical Exercise: Using Pseudo-classes and Pseudo-elements</h2>
+      <p>Use the code editor below to practice using pseudo-classes and pseudo-elements to style elements. Try adding hover effects, highlighting specific parts of text, and more.</p>
+
+      <div class="editor-container">
+        <textarea id="html-code" class="editor" placeholder="Type your HTML code here..."></textarea>
+        <textarea id="css-code" class="editor" placeholder="Type your CSS code here..."></textarea>
+        <div class="editor-controls">
+          <button onclick="runCode()">Run Code</button>
+        </div>
+        <iframe id="preview" class="preview"></iframe>
+      </div>
+
+      <!-- <h2>Quiz: Test Your Knowledge</h2>
+      <div class="quiz-container">
+        <div class="quiz-question">
+          1. Which pseudo-class would you use to style an element when a user hovers over it?
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz12-option1" name="quiz12">
+          <label for="quiz12-option1">a) :focus</label>
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz12-option2" name="quiz12">
+          <label for="quiz12-option2">b) :hover</label>
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz12-option3" name="quiz12">
+          <label for="quiz12-option3">c) :active</label>
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz12-option4" name="quiz12">
+          <label for="quiz12-option4">d) :visited</label>
+        </div>
+
+        <div class="quiz-question">
+          2. How would you style the first letter of a paragraph to be larger and bold?
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz12-option5" name="quiz12">
+          <label for="quiz12-option5">a) p::before</label>
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz12-option6" name="quiz12">
+          <label for="quiz12-option6">b) p::first-letter</label>
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz12-option7" name="quiz12">
+          <label for="quiz12-option7">c) p:first-child</label>
+        </div>
+        <div class="quiz-option">
+          <input type="radio" id="quiz12-option8" name="quiz12">
+          <label for="quiz12-option8">d) p::first-line</label>
+        </div>
+
+        <!-- Add more questions as needed -->
+      </div> -->
+    </div>
+  </div>
+  <script>
+    function runCode() {
+      const htmlCode = document.getElementById('html-code').value;
+      const cssCode = document.getElementById('css-code').value;
+      const previewFrame = document.getElementById('preview');
+
+      previewFrame.contentDocument.open();
+      previewFrame.contentDocument.write(`
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <style>${cssCode}</style>
+          </head>
+          <body>
+            ${htmlCode}
+          </body>
+        </html>
+      `);
+      previewFrame.contentDocument.close();
+    }
+  </script>
+</body>
+</html>

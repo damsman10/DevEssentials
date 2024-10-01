@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Basics Quiz</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .quiz-title {
+            text-align: center;
+            color: #0758ad;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .quiz-section {
+            margin-bottom: 30px;
+        }
+
+        .question {
+            color: #043468;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        .options {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+
+        .options li {
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        .option-label {
+            margin-left: 10px;
+        }
+
+        .back-button {
+            display: inline-block;
+            color: #fff;
+            background-color: #0758ad;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .back-button:hover {
+            background-color: #6d9cce;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="quiz-title">HTML Basics Quiz</h1>
+
+        <div class="quiz-section">
+            <p class="question">1. What does HTML stand for?</p>
+            <ul class="options">
+                <li><input type="radio" name="q1" id="q1a"><label class="option-label" for="q1a">a) Hyper Text Markup Language</label></li>
+                <li><input type="radio" name="q1" id="q1b"><label class="option-label" for="q1b">b) Hyperlinks and Text Markup Language</label></li>
+                <li><input type="radio" name="q1" id="q1c"><label class="option-label" for="q1c">c) Home Tool Markup Language</label></li>
+                <li><input type="radio" name="q1" id="q1d"><label class="option-label" for="q1d">d) Hyper Text Making Language</label></li>
+            </ul>
+        </div>
+
+        <div class="quiz-section">
+            <p class="question">2. Which tag is used to create a hyperlink in HTML?</p>
+            <ul class="options">
+                <li><input type="radio" name="q2" id="q2a"><label class="option-label" for="q2a">a) &lt;link&gt;</label></li>
+                <li><input type="radio" name="q2" id="q2b"><label class="option-label" for="q2b">b) &lt;a&gt;</label></li>
+                <li><input type="radio" name="q2" id="q2c"><label class="option-label" for="q2c">c) &lt;href&gt;</label></li>
+                <li><input type="radio" name="q2" id="q2d"><label class="option-label" for="q2d">d) &lt;url&gt;</label></li>
+            </ul>
+        </div>
+
+        <div class="quiz-section">
+            <p class="question">3. What is the correct HTML element for inserting a line break?</p>
+            <ul class="options">
+                <li><input type="radio" name="q3" id="q3a"><label class="option-label" for="q3a">a) &lt;br&gt;</label></li>
+                <li><input type="radio" name="q3" id="q3b"><label class="option-label" for="q3b">b) &lt;break&gt;</label></li>
+                <li><input type="radio" name="q3" id="q3c"><label class="option-label" for="q3c">c) &lt;lb&gt;</label></li>
+                <li><input type="radio" name="q3" id="q3d"><label class="option-label" for="q3d">d) &lt;linebreak&gt;</label></li>
+            </ul>
+        </div>
+
+        <div class="quiz-section">
+            <p class="question">4. Which of the following is used to make text bold in HTML?</p>
+            <ul class="options">
+                <li><input type="radio" name="q4" id="q4a"><label class="option-label" for="q4a">a) &lt;b&gt;</label></li>
+                <li><input type="radio" name="q4" id="q4b"><label class="option-label" for="q4b">b) &lt;bold&gt;</label></li>
+                <li><input type="radio" name="q4" id="q4c"><label class="option-label" for="q4c">c) &lt;strong&gt;</label></li>
+                <li><input type="radio" name="q4" id="q4d"><label class="option-label" for="q4d">d) Both a) and c)</label></li>
+            </ul>
+        </div>
+
+        <div class="quiz-section">
+            <p class="question">5. How can you create an ordered list in HTML?</p>
+            <ul class="options">
+                <li><input type="radio" name="q5" id="q5a"><label class="option-label" for="q5a">a) &lt;ul&gt;</label></li>
+                <li><input type="radio" name="q5" id="q5b"><label class="option-label" for="q5b">b) &lt;ol&gt;</label></li>
+                <li><input type="radio" name="q5" id="q5c"><label class="option-label" for="q5c">c) &lt;list&gt;</label></li>
+                <li><input type="radio" name="q5" id="q5d"><label class="option-label" for="q5d">d) &lt;li&gt;</label></li>
+            </ul>
+        </div>
+
+        <div class="quiz-section">
+            <p class="question">6. Which attribute is used to provide alternative text for an image in HTML?</p>
+            <ul class="options">
+                <li><input type="radio" name="q6" id="q6a"><label class="option-label" for="q6a">a) src</label></li>
+                <li><input type="radio" name="q6" id="q6b"><label class="option-label" for="q6b">b) alt</label></li>
+                <li><input type="radio" name="q6" id="q6c"><label class="option-label" for="q6c">c) title</label></li>
+                <li><input type="radio" name="q6" id="q6d"><label class="option-label" for="q6d">d) description</label></li>
+            </ul>
+        </div>
+
+        <div class="quiz-section">
+            <p class="question">7. Which HTML element is used to define important text?</p>
+            <ul class="options">
+                <li><input type="radio" name="q7" id="q7a"><label class="option-label" for="q7a">a) &lt;strong&gt;</label></li>
+                <li><input type="radio" name="q7" id="q7b"><label class="option-label" for="q7b">b) &lt;important&gt;</label></li>
+                <li><input type="radio" name="q7" id="q7c"><label class="option-label" for="q7c">c) &lt;b&gt;</label></li>
+                <li><input type="radio" name="q7" id="q7d"><label class="option-label" for="q7d">d) &lt;i&gt;</label></li>
+            </ul>
+        </div>
+
+        <div class="quiz-section">
+            <p class="question">8. What is the correct HTML element for the largest heading?</p>
+            <ul class="options">
+                <li><input type="radio" name="q8" id="q8a"><label class="option-label" for="q8a">a) &lt;h1&gt;</label></li>
+                <li><input type="radio" name="q8" id="q8b"><label class="option-label" for="q8b">b) &lt;h6&gt;</label></li>
+                <li><input type="radio" name="q8" id="q8c"><label class="option-label" for="q8c">c) &lt;h2&gt;</label></li>
+                <li><input type="radio" name="q8" id="q8d"><label class="option-label" for="q8d">d) &lt;head&gt;</label></li>
+            </ul>
+        </div>
+
+        <div class="quiz-section">
+            <p class="question">9. Which of the following is correct to open a link in a new tab?</p>
+            <ul class="options">
+                <li><input type="radio" name="q9" id="q9a"><label class="option-label" for="q9a">a) &lt;a href="url" new&gt;</label></li>
+                <li><input type="radio" name="q9" id="q9b"><label class="option-label" for="q9b">b) &lt;a href="url" target="_blank"&gt;</label></li>
+                <li><input type="radio" name="q9" id="q9c"><label class="option-label" for="q9c">c) &lt;a href="url" target="_new"&gt;</label></li>
+                <li><input type="radio" name="q9" id="q9d"><label class="option-label" for="q9d">d) &lt;a href="url" open="new"&gt;</label></li>
+            </ul>
+        </div>
+
+        <div class="quiz-section">
+            <p class="question">10. What is the correct HTML for adding a background color?</p>
+            <ul class="options">
+                <li><input type="radio" name="q10" id="q10a"><label class="option-label" for="q10a">a) &lt;background&gt;yellow&lt;/background&gt;</label></li>
+                <li><input type="radio" name="q10" id="q10b"><label class="option-label" for="q10b">b) &lt;body bg="yellow"&gt;</label></li>
+                <li><input type="radio" name="q10" id="q10c"><label class="option-label" for="q10c">c) &lt;body style="background-color: yellow;"&gt;</label></li>
+                <li><input type="radio" name="q10" id="q10d"><label class="option-label" for="q10d">d) &lt;background-color&gt;yellow&lt;/background-color&gt;</label></li>
+            </ul>
+        </div>
+
+        <div class="quiz-section">
+            <p class="question">11. Which HTML element is used to specify a footer for a document or section?</p>
+            <ul class="options">
+                <li><input type="radio" name="q11" id="q11a"><label class="option-label" for="q11a">a) &lt;footer&gt;</label></li>
+                <li><input type="radio" name="q11" id="q11b"><label class="option-label" for="q11b">b) &lt;bottom&gt;</label></li>
+                <li><input type="radio" name="q11" id="q11c"><label class="option-label" for="q11c">c) &lt;section&gt;</label></li>
+                <li><input type="radio" name="q11" id="q11d"><label class="option-label" for="q11d">d) &lt;footer-section&gt;</label></li>
+            </ul>
+        </div>
+
+        <div class="quiz-section">
+            <p class="question">12. How do you insert an image in HTML?</p>
+            <ul class="options">
+                <li><input type="radio" name="q12" id="q12a"><label class="option-label" for="q12a">a) &lt;image src="image.jpg"&gt;</label></li>
+                <li><input type="radio" name="q12" id="q12b"><label class="option-label" for="q12b">b) &lt;img href="image.jpg"&gt;</label></li>
+                <li><input type="radio" name="q12" id="q12c"><label class="option-label" for="q12c">c) &lt;img src="image.jpg"&gt;</label></li>
+                <li><input type="radio" name="q12" id="q12d"><label class="option-label" for="q12d">d) &lt;img alt="image.jpg"&gt;</label></li>
+            </ul>
+        </div>
+
+        <div class="quiz-section">
+            <p class="question">13. What is the correct HTML for creating a text input field?</p>
+            <ul class="options">
+                <li><input type="radio" name="q13" id="q13a"><label class="option-label" for="q13a">a) &lt;textfield&gt;</label></li>
+                <li><input type="radio" name="q13" id="q13b"><label class="option-label" for="q13b">b) &lt;textinput type="text"&gt;</label></li>
+                <li><input type="radio" name="q13" id="q13c"><label class="option-label" for="q13c">c) &lt;input type="textfield"&gt;</label></li>
+                <li><input type="radio" name="q13" id="q13d"><label class="option-label" for="q13d">d) &lt;input type="text"&gt;</label></li>
+            </ul>
+        </div>
+
+        <div class="quiz-section">
+            <p class="question">14. Which of the following is correct to create a checkbox in HTML?</p>
+            <ul class="options">
+                <li><input type="radio" name="q14" id="q14a"><label class="option-label" for="q14a">a) &lt;input type="check"&gt;</label></li>
+                <li><input type="radio" name="q14" id="q14b"><label class="option-label" for="q14b">b) &lt;input type="checkbox"&gt;</label></li>
+                <li><input type="radio" name="q14" id="q14c"><label class="option-label" for="q14c">c) &lt;input type="box"&gt;</label></li>
+                <li><input type="radio" name="q14" id="q14d"><label class="option-label" for="q14d">d) &lt;check type="checkbox"&gt;</label></li>
+            </ul>
+        </div>
+
+        <div class="quiz-section">
+            <p class="question">15. What does the "action" attribute in HTML forms do?</p>
+            <ul class="options">
+                <li><input type="radio" name="q15" id="q15a"><label class="option-label" for="q15a">a) Specifies the form’s action URL</label></li>
+                <li><input type="radio" name="q15" id="q15b"><label class="option-label" for="q15b">b) Specifies the HTTP method</label></li>
+                <li><input type="radio" name="q15" id="q15c"><label class="option-label" for="q15c">c) Specifies the form’s method</label></li>
+                <li><input type="radio" name="q15" id="q15d"><label class "option-label" for="q15d">d) Specifies the form’s name</label></li>
+            </ul>
+        </div>
+
+        <div class="quiz-section">
+            <p class="question">16. Which of the following elements can be used to embed a video in HTML?</p>
+            <ul class="options">
+                <li><input type="radio" name="q16" id="q16a"><label class="option-label" for="q16a">a) &lt;video&gt;</label></li>
+                <li><input type="radio" name="q16" id="q16b"><label class="option-label" for="q16b">b) &lt;embed&gt;</label></li>
+                <li><input type="radio" name="q16" id="q16c"><label class="option-label" for="q16c">c) &lt;iframe&gt;</label></li>
+                <li><input type="radio" name="q16" id="q16d"><label class="option-label" for="q16d">d) All of the above</label></li>
+            </ul>
+        </div>
+
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdPMMHdWZ36DPsosx-dUEZJr_lbiTsd3yWJXcL7H99tsMQcig/viewform?embedded=true" width="90%" height="4133" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+        <div class="quiz-section">
+            <
