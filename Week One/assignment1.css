@@ -1,0 +1,101 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.course-title {
+    text-align: center;
+    color: #0758ad;
+    margin-bottom: 20px;
+}
+
+.assignment-section {
+    margin-bottom: 30px;
+}
+
+.assignment-title {
+    color: #0758ad;
+    border-bottom: 2px solid #0758ad;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.assignment-details {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.assignment-details li {
+    margin-bottom: 10px;
+}
+
+.download-link {
+    color: #0758ad;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.download-link:hover {
+    text-decoration: underline;
+}
+
+video {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.submit-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #fff;
+    background-color: #0758ad;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.submit-link:hover {
+    background-color: #6d9cce;
+}
+
+.back-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #fff;
+    background-color: #0758ad;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.back-button:hover {
+    background-color: #6d9cce;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+}
