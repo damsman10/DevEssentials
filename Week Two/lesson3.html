@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Tables</title>
+  <link rel="stylesheet" href="lessons.css">
+  <style>
+    .editor-container {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+    }
+    .editor {
+      width: 100%;
+      height: 200px;
+      margin-bottom: 10px;
+    }
+    .preview {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      height: 200px;
+      overflow: auto;
+      background-color: #fff;
+    }
+    .editor-controls {
+      display: flex;
+      justify-content: space-between;
+    }
+    .editor-controls button {
+      background-color: #0758ad;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .editor-controls button:hover {
+      background-color: #6d9cce;
+    }
+    .video-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .video-container iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="lesson-container">
+    <a href="./week2.html" class="back-button">← Back to Week 2</a>
+    <h1 class="lesson-title">Lesson 3: HTML Tables</h1>
+
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+    </div>
+
+    <div class="lesson-content">
+      <h2>What are HTML Tables?</h2>
+      <p>HTML tables allow you to display data in a structured, tabular format. Tables are commonly used to present data in rows and columns.</p>
+
+      <h2>Basic Table Elements</h2>
+      <ul>
+        <li><code>&lt;table&gt;</code>: Container for the table.</li>
+        <li><code>&lt;tr&gt;</code>: Table row.</li>
+        <li><code>&lt;td&gt;</code>: Table data cell.</li>
+        <li><code>&lt;th&gt;</code>: Table header cell.</li>
+      </ul>
+
+      <h2>Example: Simple HTML Table</h2>
+      <p>Here is an example of a basic HTML table:</p>
+      <pre><code>&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Age&lt;/th&gt;
+    &lt;th&gt;City&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Alice&lt;/td&gt;
+    &lt;td&gt;25&lt;/td&gt;
+    &lt;td&gt;New York&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Bob&lt;/td&gt;
+    &lt;td&gt;30&lt;/td&gt;
+    &lt;td&gt;Chicago&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+      <h2>Practice</h2>
+      <p>Try creating your own table below. You can add <code>&lt;th&gt;</code> for headers and <code>&lt;td&gt;</code> for data cells.</p>
+
+      <div class="editor-container">
+        <textarea id="html-code" class="editor" placeholder="Type your HTML code here..."></textarea>
+        <textarea id="css-code" class="editor" placeholder="Type your CSS code here..."></textarea>
+        <textarea id="js-code" class="editor" placeholder="Type your JavaScript code here..."></textarea>
+        <div class="editor-controls">
+          <button onclick="runCode()">Run Code</button>
+        </div>
+        <iframe id="preview" class="preview"></iframe>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function runCode() {
+      const htmlCode = document.getElementById('html-code').value;
+      const cssCode = document.getElementById('css-code').value;
+      const jsCode = document.getElementById('js-code').value;
+      const previewFrame = document.getElementById('preview');
+
+      previewFrame.contentDocument.open();
+      previewFrame.contentDocument.write(`
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <style>${cssCode}</style>
+          </head>
+          <body>
+            ${htmlCode}
+            <script>${jsCode}<\/script>
+          </body>
+        </html>
+      `);
+      previewFrame.contentDocument.close();
+    }
+  </script>
+</body>
+</html>

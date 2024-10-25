@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semantic HTML</title>
+  <link rel="stylesheet" href="lessons.css">
+  <style>
+    .editor-container {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+    }
+    .editor {
+      width: 100%;
+      height: 200px;
+      margin-bottom: 10px;
+    }
+    .preview {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      height: 200px;
+      overflow: auto;
+      background-color: #fff;
+    }
+    .editor-controls {
+      display: flex;
+      justify-content: space-between;
+    }
+    .editor-controls button {
+      background-color: #0758ad;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .editor-controls button:hover {
+      background-color: #6d9cce;
+    }
+    .video-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .video-container iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="lesson-container">
+    <a href="./week2.html" class="back-button">← Back to Week 2</a>
+    <h1 class="lesson-title">Lesson 1: Semantic HTML</h1>
+
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+    </div>
+
+    <div class="lesson-content">
+      <h2>What is Semantic HTML?</h2>
+      <p>Semantic HTML provides meaning to web elements, enhancing accessibility and SEO. It helps browsers and search engines understand the page structure, making it more accessible and improving usability.</p>
+      
+      <h2>Semantic HTML Tags</h2>
+      <ul>
+        <li><code>&lt;header&gt;</code>: Defines a header section for a document or section.</li>
+        <li><code>&lt;nav&gt;</code>: Represents a section for navigation links.</li>
+        <li><code>&lt;main&gt;</code>: Specifies the main content area.</li>
+        <li><code>&lt;article&gt;</code>: Contains self-contained content, like a blog post.</li>
+        <li><code>&lt;section&gt;</code>: Defines a section in a document.</li>
+        <li><code>&lt;aside&gt;</code>: Holds content indirectly related to the main content.</li>
+        <li><code>&lt;footer&gt;</code>: Defines a footer for a document or section.</li>
+      </ul>
+
+      <h2>Example: Semantic HTML Structure</h2>
+      <pre><code>&lt;header&gt;
+  &lt;h1&gt;Welcome to My Blog&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;main&gt;
+  &lt;section&gt;
+    &lt;article&gt;
+      &lt;h2&gt;Blog Post Title&lt;/h2&gt;
+      &lt;p&gt;This is the content of the blog post.&lt;/p&gt;
+    &lt;/article&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+  &lt;p&gt;© 2024 My Blog&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+
+      <h2>Practice</h2>
+      <p>Create a simple page structure using the semantic HTML tags. Try structuring it as shown in the example above.</p>
+
+      <div class="editor-container">
+        <textarea id="html-code" class="editor" placeholder="Type your HTML code here..."></textarea>
+        <textarea id="css-code" class="editor" placeholder="Type your CSS code here..."></textarea>
+        <textarea id="js-code" class="editor" placeholder="Type your JavaScript code here..."></textarea>
+        <div class="editor-controls">
+          <button onclick="runCode()">Run Code</button>
+        </div>
+        <iframe id="preview" class="preview"></iframe>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function runCode() {
+      const htmlCode = document.getElementById('html-code').value;
+      const cssCode = document.getElementById('css-code').value;
+      const jsCode = document.getElementById('js-code').value;
+      const previewFrame = document.getElementById('preview');
+
+      previewFrame.contentDocument.open();
+      previewFrame.contentDocument.write(`
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <style>${cssCode}</style>
+          </head>
+          <body>
+            ${htmlCode}
+            <script>${jsCode}<\/script>
+          </body>
+        </html>
+      `);
+      previewFrame.contentDocument.close();
+    }
+  </script>
+</body>
+</html>

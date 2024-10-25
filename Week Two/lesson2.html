@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Forms</title>
+  <link rel="stylesheet" href="lessons.css">
+  <style>
+    .editor-container {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+    }
+    .editor {
+      width: 100%;
+      height: 200px;
+      margin-bottom: 10px;
+    }
+    .preview {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      height: 200px;
+      overflow: auto;
+      background-color: #fff;
+    }
+    .editor-controls {
+      display: flex;
+      justify-content: space-between;
+    }
+    .editor-controls button {
+      background-color: #0758ad;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .editor-controls button:hover {
+      background-color: #6d9cce;
+    }
+    .video-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .video-container iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="lesson-container">
+    <a href="./week2.html" class="back-button">← Back to Week 2</a>
+    <h1 class="lesson-title">Lesson 2: HTML Forms</h1>
+
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+    </div>
+
+    <div class="lesson-content">
+      <h2>What are HTML Forms?</h2>
+      <p>HTML forms are used to collect user input. They allow users to submit information, such as names, emails, and passwords, which can then be processed by a server.</p>
+      
+      <h2>Basic Form Elements</h2>
+      <ul>
+        <li><code>&lt;form&gt;</code>: Container for form elements.</li>
+        <li><code>&lt;input&gt;</code>: Creates input fields, such as text boxes, radio buttons, and checkboxes.</li>
+        <li><code>&lt;label&gt;</code>: Defines a label for form elements, improving accessibility.</li>
+        <li><code>&lt;textarea&gt;</code>: Allows multi-line text input.</li>
+        <li><code>&lt;button&gt;</code>: Defines a clickable button, commonly used to submit forms.</li>
+      </ul>
+
+      <h2>Example: Simple Contact Form</h2>
+      <p>The code below shows a basic structure of a contact form:</p>
+      <pre><code>&lt;form action="/submit_form" method="POST"&gt;
+  &lt;label for="name"&gt;Name:&lt;/label&gt;
+  &lt;input type="text" id="name" name="name" required&gt;
+
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email" required&gt;
+
+  &lt;label for="message"&gt;Message:&lt;/label&gt;
+  &lt;textarea id="message" name="message"&gt;&lt;/textarea&gt;
+
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+      <h2>Practice</h2>
+      <p>Try creating your own form. Use the <code>&lt;form&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;label&gt;</code>, and <code>&lt;button&gt;</code> elements to collect information from the user.</p>
+
+      <div class="editor-container">
+        <textarea id="html-code" class="editor" placeholder="Type your HTML code here..."></textarea>
+        <textarea id="css-code" class="editor" placeholder="Type your CSS code here..."></textarea>
+        <textarea id="js-code" class="editor" placeholder="Type your JavaScript code here..."></textarea>
+        <div class="editor-controls">
+          <button onclick="runCode()">Run Code</button>
+        </div>
+        <iframe id="preview" class="preview"></iframe>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function runCode() {
+      const htmlCode = document.getElementById('html-code').value;
+      const cssCode = document.getElementById('css-code').value;
+      const jsCode = document.getElementById('js-code').value;
+      const previewFrame = document.getElementById('preview');
+
+      previewFrame.contentDocument.open();
+      previewFrame.contentDocument.write(`
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <style>${cssCode}</style>
+          </head>
+          <body>
+            ${htmlCode}
+            <script>${jsCode}<\/script>
+          </body>
+        </html>
+      `);
+      previewFrame.contentDocument.close();
+    }
+  </script>
+</body>
+</html>
