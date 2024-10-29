@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Media Queries</title>
+  <link rel="stylesheet" href="lessons.css">
+  <style>
+    .editor-container {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+    }
+    .editor {
+      width: 100%;
+      height: 200px;
+      margin-bottom: 10px;
+    }
+    .preview {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      height: 200px;
+      overflow: auto;
+      background-color: #fff;
+    }
+    .editor-controls {
+      display: flex;
+      justify-content: space-between;
+    }
+    .editor-controls button {
+      background-color: #0758ad;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .editor-controls button:hover {
+      background-color: #6d9cce;
+    }
+    .video-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .video-container iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="lesson-container">
+    <a href="./week2.html" class="back-button">← Back to Week 2</a>
+    <h1 class="lesson-title">Lesson 7: CSS Media Queries</h1>
+
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+    </div>
+
+    <div class="lesson-content">
+      <h2>What Are Media Queries?</h2>
+      <p>Media queries are a CSS feature that allows you to apply styles based on certain conditions, such as the screen's width, height, orientation, and resolution. They’re essential for creating responsive designs that adapt to different devices.</p>
+
+      <h2>Syntax of Media Queries</h2>
+      <p>A media query consists of a condition and a set of CSS rules. Here’s an example syntax:</p>
+      <pre><code>@media (condition) {
+  /* CSS rules */
+}</code></pre>
+
+      <h2>Basic Example of Media Queries</h2>
+      <p>Below is an example of a media query that applies different styles for screens narrower than 768px:</p>
+      <pre><code>/* Default styles for larger screens */
+.container {
+  padding: 20px;
+}
+
+/* Styles for screens smaller than 768px */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+}</code></pre>
+
+      <h2>Common Media Query Breakpoints</h2>
+      <ul>
+        <li><strong>Small screens</strong>: <code>@media (max-width: 600px)</code></li>
+        <li><strong>Tablets</strong>: <code>@media (max-width: 768px)</code></li>
+        <li><strong>Desktops</strong>: <code>@media (min-width: 1024px)</code></li>
+      </ul>
+
+      <h2>Practice</h2>
+      <p>Use the code editor below to try creating your own media queries. Experiment with different screen sizes and style adjustments.</p>
+
+      <div class="editor-container">
+        <textarea id="html-code" class="editor" placeholder="Type your HTML code here..."></textarea>
+        <textarea id="css-code" class="editor" placeholder="Type your CSS code here..."></textarea>
+        <textarea id="js-code" class="editor" placeholder="Type your JavaScript code here..."></textarea>
+        <div class="editor-controls">
+          <button onclick="runCode()">Run Code</button>
+        </div>
+        <iframe id="preview" class="preview"></iframe>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function runCode() {
+      const htmlCode = document.getElementById('html-code').value;
+      const cssCode = document.getElementById('css-code').value;
+      const jsCode = document.getElementById('js-code').value;
+      const previewFrame = document.getElementById('preview');
+
+      previewFrame.contentDocument.open();
+      previewFrame.contentDocument.write(`
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <style>${cssCode}</style>
+          </head>
+          <body>
+            ${htmlCode}
+            <script>${jsCode}<\/script>
+          </body>
+        </html>
+      `);
+      previewFrame.contentDocument.close();
+    }
+  </script>
+</body>
+</html>

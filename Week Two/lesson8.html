@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Variables</title>
+  <link rel="stylesheet" href="lessons.css">
+  <style>
+    .editor-container {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+    }
+    .editor {
+      width: 100%;
+      height: 200px;
+      margin-bottom: 10px;
+    }
+    .preview {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      height: 200px;
+      overflow: auto;
+      background-color: #fff;
+    }
+    .editor-controls {
+      display: flex;
+      justify-content: space-between;
+    }
+    .editor-controls button {
+      background-color: #0758ad;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .editor-controls button:hover {
+      background-color: #6d9cce;
+    }
+    .video-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .video-container iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="lesson-container">
+    <a href="./week2.html" class="back-button">← Back to Week 2</a>
+    <h1 class="lesson-title">Lesson 8: CSS Variables</h1>
+
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+    </div>
+
+    <div class="lesson-content">
+      <h2>What are CSS Variables?</h2>
+      <p>CSS variables, also known as custom properties, allow you to define reusable values in your CSS that you can apply throughout your stylesheet. This can help make your code more manageable and adaptable to changes.</p>
+
+      <h2>How to Define CSS Variables</h2>
+      <p>To define a CSS variable, use the <code>--variable-name</code> syntax inside a CSS selector, often in the <code>:root</code> selector to make them global:</p>
+      <pre><code>:root {
+  --primary-color: #0758ad;
+  --secondary-color: #6d9cce;
+  --font-size-large: 18px;
+}</code></pre>
+
+      <h2>Using CSS Variables</h2>
+      <p>To use a CSS variable, reference it with the <code>var()</code> function:</p>
+      <pre><code>body {
+  color: var(--primary-color);
+  font-size: var(--font-size-large);
+}</code></pre>
+
+      <h2>Overriding CSS Variables</h2>
+      <p>You can override variables within specific elements to create different themes or adapt styles in various contexts:</p>
+      <pre><code>.dark-theme {
+  --primary-color: #333;
+}</code></pre>
+      <p>Applying <code>var(--primary-color)</code> inside <code>.dark-theme</code> will now use <code>#333</code> instead of the default color.</p>
+
+      <h2>Practice</h2>
+      <p>In the editor below, define some CSS variables in the <code>:root</code> selector and try applying them to different elements. Experiment with different values to see how easily you can adjust styles.</p>
+
+      <div class="editor-container">
+        <textarea id="html-code" class="editor" placeholder="Type your HTML code here..."></textarea>
+        <textarea id="css-code" class="editor" placeholder="Type your CSS code here..."></textarea>
+        <textarea id="js-code" class="editor" placeholder="Type your JavaScript code here..."></textarea>
+        <div class="editor-controls">
+          <button onclick="runCode()">Run Code</button>
+        </div>
+        <iframe id="preview" class="preview"></iframe>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function runCode() {
+      const htmlCode = document.getElementById('html-code').value;
+      const cssCode = document.getElementById('css-code').value;
+      const jsCode = document.getElementById('js-code').value;
+      const previewFrame = document.getElementById('preview');
+
+      previewFrame.contentDocument.open();
+      previewFrame.contentDocument.write(`
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <style>${cssCode}</style>
+          </head>
+          <body>
+            ${htmlCode}
+            <script>${jsCode}<\/script>
+          </body>
+        </html>
+      `);
+      previewFrame.contentDocument.close();
+    }
+  </script>
+</body>
+</html>

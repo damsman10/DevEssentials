@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Grid</title>
+  <link rel="stylesheet" href="lessons.css">
+  <style>
+    .editor-container {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+    }
+    .editor {
+      width: 100%;
+      height: 200px;
+      margin-bottom: 10px;
+    }
+    .preview {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      height: 200px;
+      overflow: auto;
+      background-color: #fff;
+    }
+    .editor-controls {
+      display: flex;
+      justify-content: space-between;
+    }
+    .editor-controls button {
+      background-color: #0758ad;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .editor-controls button:hover {
+      background-color: #6d9cce;
+    }
+    .video-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .video-container iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="lesson-container">
+    <a href="./week2.html" class="back-button">← Back to Week 2</a>
+    <h1 class="lesson-title">Lesson 5: CSS Grid</h1>
+
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+    </div>
+
+    <div class="lesson-content">
+      <h2>What is CSS Grid?</h2>
+      <p>CSS Grid is a layout system that enables you to create complex and responsive web layouts with ease. It provides a two-dimensional grid-based layout, allowing for rows and columns, making it perfect for building web page layouts.</p>
+
+      <h2>Defining a Grid Container</h2>
+      <p>To start using CSS Grid, apply <code>display: grid;</code> to a container element. This container will serve as a grid container for the child elements (grid items).</p>
+      <pre><code>.grid-container {
+  display: grid;
+}</code></pre>
+
+      <h2>Setting Up Columns and Rows</h2>
+      <p>Use <code>grid-template-columns</code> and <code>grid-template-rows</code> to define the number and size of columns and rows in the grid container:</p>
+      <pre><code>.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+}</code></pre>
+      <p>In this example, the container has three columns of equal width, where <code>1fr</code> (fractional unit) divides space equally.</p>
+
+      <h2>Grid Gap</h2>
+      <p>Add spacing between grid items using <code>grid-gap</code> (or <code>gap</code>):</p>
+      <pre><code>.grid-container {
+  gap: 10px;
+}</code></pre>
+
+      <h2>Placing Grid Items</h2>
+      <p>Position grid items using properties like <code>grid-column</code> and <code>grid-row</code> to span columns and rows:</p>
+      <pre><code>.grid-item {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+}</code></pre>
+      <p>This example makes a grid item span from the first to the third column and from the first to the second row.</p>
+
+      <h2>Practice</h2>
+      <p>In the editor below, create a grid layout with multiple items. Experiment with different grid setups, including <code>grid-template-columns</code>, <code>grid-template-rows</code>, and <code>grid-gap</code>.</p>
+
+      <div class="editor-container">
+        <textarea id="html-code" class="editor" placeholder="Type your HTML code here..."></textarea>
+        <textarea id="css-code" class="editor" placeholder="Type your CSS code here..."></textarea>
+        <textarea id="js-code" class="editor" placeholder="Type your JavaScript code here..."></textarea>
+        <div class="editor-controls">
+          <button onclick="runCode()">Run Code</button>
+        </div>
+        <iframe id="preview" class="preview"></iframe>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function runCode() {
+      const htmlCode = document.getElementById('html-code').value;
+      const cssCode = document.getElementById('css-code').value;
+      const jsCode = document.getElementById('js-code').value;
+      const previewFrame = document.getElementById('preview');
+
+      previewFrame.contentDocument.open();
+      previewFrame.contentDocument.write(`
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <style>${cssCode}</style>
+          </head>
+          <body>
+            ${htmlCode}
+            <script>${jsCode}<\/script>
+          </body>
+        </html>
+      `);
+      previewFrame.contentDocument.close();
+    }
+  </script>
+</body>
+</html>
